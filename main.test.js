@@ -29,3 +29,5 @@ test('reverseString() works for strings with numbers', () => {
 test('reverseString() works for mixed strings', () => {
   expect(reverseString('5test6JEST7')).toBe('7TSEJ6tset5');
 });
+
+// calculator object
