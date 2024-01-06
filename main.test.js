@@ -1,4 +1,4 @@
-import { capitalize } from './main';
+import { capitalize, reverseString } from './main';
 
 // capitalize() function tests
 test('capitalize() works for lowercase strings', () => {
@@ -9,6 +9,6 @@ test('capitalize() works for uppercase strings', () => {
   expect(capitalize('TESTINGISFUN')).toBe('TESTINGISFUN');
 });
 
-test('capitalize() does not break when number strings are used', () => {
+test('capitalize() works for number strings', () => {
   expect(capitalize('45544')).toBe('45544');
 });
