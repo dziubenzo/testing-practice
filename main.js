@@ -26,3 +26,31 @@ export const calculator = {
     return num1 * num2;
   },
 };
+
+export function caesarCipher(text, shiftFactor) {
+  const lowerAlphabet = Array.from(' .,?!abcdefghijklmnopqrstuvwxyz0123456789');
+  const upperAlphabet = Array.from(' .,?!ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
+  let result = '';
+  const textArray = Array.from(text);
+  for (const letter of textArray) {
+    let index;
+    let newLetter;
+    if (lowerAlphabet.includes(letter)) {
+      index = lowerAlphabet.indexOf(letter);
+      const newIndex =
+        (((index + shiftFactor) % lowerAlphabet.length) +
+          lowerAlphabet.length) %
+        lowerAlphabet.length;
+      newLetter = lowerAlphabet[newIndex];
+    } else {
+      index = upperAlphabet.indexOf(letter);
+      const newIndex =
+        (((index + shiftFactor) % lowerAlphabet.length) +
+          lowerAlphabet.length) %
+        lowerAlphabet.length;
+      newLetter = upperAlphabet[newIndex];
+    }
+    result += newLetter;
+  }
+  return result;
+}

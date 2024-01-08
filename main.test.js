@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './main';
+import { capitalize, reverseString, calculator, caesarCipher } from './main';
 
 // capitalize() function
 test('capitalize() works for lowercase strings', () => {
@@ -74,18 +74,30 @@ test('caesarCipher() works with negative shift factor', () => {
   expect(caesarCipher('monday', -5)).toBe('hji? t');
 });
 
+test('caesarCipher() works with ridiculously high positive shift factor', () => {
+  expect(caesarCipher('monday', 333)).toBe('rtsif3');
+});
+
+test('caesarCipher() works with ridiculously high negative shift factor', () => {
+  expect(caesarCipher('monday', -111)).toBe('y0zpm ');
+});
+
 test('caesarCipher() works with basic punctuation', () => {
   expect(caesarCipher('monday, dammit!', 2)).toBe('oqpfc0!,fcookvb');
 });
 
 test('caesarCipher() works with numbers', () => {
-  expect(caesarCipher('monday, dammit!', -15)).toBe('mpuvh0jdve!v70g4v5f?z');
+  expect(caesarCipher('43534xDDDD', -15)).toBe('poqopi3333');
 });
 
 test('caesarCipher() keeps the same case', () => {
-  expect(caesarCipher('fun times', 17)).toBe('w.4m z3v9');
+  expect(caesarCipher('FUN TImes', 17)).toBe('W.4m Z3v9');
 });
 
 test('caesarCipher() wraps text', () => {
   expect(caesarCipher('6789', 4)).toBe(' .,?');
+});
+
+test('caesarCipher() wraps text the other way', () => {
+  expect(caesarCipher(',,,,', -3)).toBe('9999');
 });
