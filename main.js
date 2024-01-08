@@ -35,8 +35,10 @@ export function caesarCipher(text, shiftFactor) {
   for (const letter of textArray) {
     let index;
     let newLetter;
+    // Choose appropriate case
     if (lowerAlphabet.includes(letter)) {
       index = lowerAlphabet.indexOf(letter);
+      // Make sure modulo works with negative numbers
       const newIndex =
         (((index + shiftFactor) % lowerAlphabet.length) +
           lowerAlphabet.length) %
@@ -44,6 +46,7 @@ export function caesarCipher(text, shiftFactor) {
       newLetter = lowerAlphabet[newIndex];
     } else {
       index = upperAlphabet.indexOf(letter);
+      // Make sure modulo works with negative numbers
       const newIndex =
         (((index + shiftFactor) % lowerAlphabet.length) +
           lowerAlphabet.length) %
@@ -54,9 +57,6 @@ export function caesarCipher(text, shiftFactor) {
   }
   return result;
 }
-
-const array1 = [1, 8, 3, 4, 2, 6];
-const array2 = [20, 5555, 1, 23, 954, 232, 4, 2222, 4894];
 
 export function analyzeArray(array) {
   const length = array.length;

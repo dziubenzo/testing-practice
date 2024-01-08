@@ -1,4 +1,10 @@
-import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from './main';
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} from './main';
 
 // capitalize() function
 test('capitalize() works for lowercase strings', () => {
@@ -103,30 +109,25 @@ test('caesarCipher() wraps text the other way', () => {
 });
 
 // analyzeArray() function
+const array1 = [1, 8, 3, 4, 2, 6];
+const array2 = [20, 5555, 1, 23, 954, 232, 4, 2222, 4894];
+
 test('object created by analyzeArray() has correct average property', () => {
-  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
-  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
-  expect(object1.average).toBe(4);
-  expect(object2.average).toBe(1545);
+  expect(analyzeArray(array1).average).toBe(4);
+  expect(analyzeArray(array2).average).toBe(1545);
 });
 
 test('object created by analyzeArray() has correct min property', () => {
-  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
-  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
-  expect(object1.min).toBe(1);
-  expect(object2.min).toBe(1);
+  expect(analyzeArray(array1).min).toBe(1);
+  expect(analyzeArray(array2).min).toBe(1);
 });
 
 test('object created by analyzeArray() has correct max property', () => {
-  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
-  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
-  expect(object1.max).toBe(8);
-  expect(object2.max).toBe(5555);
+  expect(analyzeArray(array1).max).toBe(8);
+  expect(analyzeArray(array2).max).toBe(5555);
 });
 
 test('object created by analyzeArray() has correct length property', () => {
-  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
-  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
-  expect(object1.length).toBe(6);
-  expect(object2.length).toBe(9);
+  expect(analyzeArray(array1).length).toBe(6);
+  expect(analyzeArray(array2).length).toBe(9);
 });
