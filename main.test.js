@@ -64,3 +64,28 @@ test('calculator.multiply() works', () => {
   expect(calculator.multiply(-5, -5)).toBe(25);
   expect(calculator.multiply(1, -12)).toBe(-12);
 });
+
+// caesarCipher() function
+test('caesarCipher() works with positive shift factor', () => {
+  expect(caesarCipher('monday', 3)).toBe('prqgd1');
+});
+
+test('caesarCipher() works with negative shift factor', () => {
+  expect(caesarCipher('monday', -5)).toBe('hji? t');
+});
+
+test('caesarCipher() works with basic punctuation', () => {
+  expect(caesarCipher('monday, dammit!', 2)).toBe('oqpfc0!,fcookvb');
+});
+
+test('caesarCipher() works with numbers', () => {
+  expect(caesarCipher('monday, dammit!', -15)).toBe('mpuvh0jdve!v70g4v5f?z');
+});
+
+test('caesarCipher() keeps the same case', () => {
+  expect(caesarCipher('fun times', 17)).toBe('w.4m z3v9');
+});
+
+test('caesarCipher() wraps text', () => {
+  expect(caesarCipher('6789', 4)).toBe(' .,?');
+});
