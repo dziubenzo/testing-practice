@@ -57,3 +57,13 @@ export function caesarCipher(text, shiftFactor) {
 
 const array1 = [1, 8, 3, 4, 2, 6];
 const array2 = [20, 5555, 1, 23, 954, 232, 4, 2222, 4894];
+
+export function analyzeArray(array) {
+  const length = array.length;
+  const average =
+    array.reduce((previous, current) => (previous += current), 0) / length;
+  const sortedArray = array.toSorted((a, b) => a - b);
+  const min = sortedArray[0];
+  const max = sortedArray[length - 1];
+  return { average, min, max, length };
+}

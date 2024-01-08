@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from './main';
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from './main';
 
 // capitalize() function
 test('capitalize() works for lowercase strings', () => {
