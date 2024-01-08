@@ -54,3 +54,6 @@ export function caesarCipher(text, shiftFactor) {
   }
   return result;
 }
+
+const array1 = [1, 8, 3, 4, 2, 6];
+const array2 = [20, 5555, 1, 23, 954, 232, 4, 2222, 4894];

@@ -101,3 +101,32 @@ test('caesarCipher() wraps text', () => {
 test('caesarCipher() wraps text the other way', () => {
   expect(caesarCipher(',,,,', -3)).toBe('9999');
 });
+
+// analyzeArray() function
+test('object created by analyzeArray() has correct average property', () => {
+  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
+  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
+  expect(object1.average).toBe(4);
+  expect(object2.average).toBe(1545);
+});
+
+test('object created by analyzeArray() has correct min property', () => {
+  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
+  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
+  expect(object1.min).toBe(1);
+  expect(object2.min).toBe(1);
+});
+
+test('object created by analyzeArray() has correct max property', () => {
+  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
+  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
+  expect(object1.max).toBe(8);
+  expect(object2.max).toBe(5555);
+});
+
+test('object created by analyzeArray() has correct length property', () => {
+  const object1 = analyzeArray([1, 8, 3, 4, 2, 6]);
+  const object2 = analyzeArray([20, 5555, 1, 23, 954, 232, 4, 2222, 4894]);
+  expect(object1.length).toBe(6);
+  expect(object2.length).toBe(9);
+});
