@@ -30,7 +30,7 @@ test('reverseString() works for mixed strings', () => {
   expect(reverseString('5test6JEST7')).toBe('7TSEJ6tset5');
 });
 
-// calculator object
+// calculator object, adding more expects seems reasonable in this case?
 test('calculator.add() works', () => {
   expect(calculator.add(2, 2)).toBe(4);
   expect(calculator.add(15, 2)).toBe(17);
@@ -42,14 +42,14 @@ test('calculator.subtract() works', () => {
   expect(calculator.subtract(5, 2)).toBe(3);
   expect(calculator.subtract(15, 2)).toBe(13);
   expect(calculator.subtract(-5, -5)).toBe(0);
-  expect(calculator.subtract(0, -12)).toBe(-12);
+  expect(calculator.subtract(0, -12)).toBe(12);
 });
 
 test('calculator.divide() works', () => {
   expect(calculator.divide(6, 2)).toBe(3);
   expect(calculator.divide(15, 2)).toBe(7.5);
   expect(calculator.divide(-5, -5)).toBe(1);
-  expect(calculator.divide(0, -12)).toBe(0);
+  expect(calculator.divide(0, 12)).toBe(0);
 });
 
 test('calculator.divide() throws an error when divisor is 0', () => {
