@@ -6,4 +6,6 @@ export function reverseString(string) {
   return Array.from(string).reverse().join('');
 }
 
-const calculator = {};
+export const calculator = {
+  
+};
